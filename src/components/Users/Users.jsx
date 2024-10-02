@@ -8,7 +8,12 @@ const Users = () => {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) =>{
+        console.log(data)
+        if(data.message){
+          alert(data.message)
+        }
+      } );
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

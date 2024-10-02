@@ -13,6 +13,8 @@ import AuthProvider from "./components/provider/AuthProvider";
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 import Users from "./components/Users/Users";
+import AddCoffee from "./components/AddCoffee/AddCoffee";
+import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee";
 
 
 
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
         path: "/users",
         element: <Users />,
         loader: () => fetch('http://localhost:5000/users')
+      },
+      {
+        path: "/addCoffee",
+        element: <AddCoffee />,
+      },
+      {
+        path: "/updateCoffee",
+        element: <UpdateCoffee />,
       },
     ],
   },
