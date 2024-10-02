@@ -12,6 +12,7 @@ import Home from "./components/Home/Home";
 import AuthProvider from "./components/provider/AuthProvider";
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
+import Users from "./components/Users/Users";
 
 
 
@@ -27,7 +28,12 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-      }
+      },
+      {
+        path: "/users",
+        element: <Users />,
+        loader: () => fetch('http://localhost:5000/users')
+      },
     ],
   },
 ]);

@@ -17,12 +17,21 @@ const Register = () => {
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json", // Content-Type header should be in title case
       },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("User added successfully");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error); // Log any potential errors
+        alert("Failed to add user");
+      });
 
     // create user in firebase
     createUser(email, password)
