@@ -15,6 +15,7 @@ import { StrictMode } from "react";
 import Users from "./components/Users/Users";
 import AddCoffee from "./components/AddCoffee/AddCoffee";
 import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee";
+import Main from "./components/Main/Main";
 
 
 
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Main />,
+        loader: () => fetch('http://localhost:5000/coffee')
       },
       {
         path: "/register",

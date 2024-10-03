@@ -9,7 +9,7 @@ const AddCoffee = () => {
     e.preventDefault();
     const form = e.target;
 
-    const name = form.name.value;
+    const coffeeName = form.coffeeName.value;
     const category = form.category.value;
     const chefName = form.chefName.value;
     const supplierName = form.supplierName.value;
@@ -18,7 +18,7 @@ const AddCoffee = () => {
     const photo = form.photo.value;
 
     const data = {
-      name,
+      coffeeName,
       category,
       chefName,
       supplierName,
